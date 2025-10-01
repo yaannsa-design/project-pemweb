@@ -1,0 +1,13 @@
+/* Additional CSS for fade-in animation triggered by JavaScript */
+.fade-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Initial state for fade-in elements */
+section, .card, .portfolio-box {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}

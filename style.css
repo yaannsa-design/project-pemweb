@@ -1,0 +1,628 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+:root {
+    --bg-color: #fff;
+    --snd-bg-color: #d5fdf9;
+    --text-color: #000;
+    --main-color: #0477bf;
+
+}
+
+html {
+    font-size: 62,5%;
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+section {
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+
+/* header Section code */
+
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right:0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 5%;
+    background: var(--main-color);
+    backdrop-filter: blur(10px);
+    transition: all 0.5s ease;
+}
+
+.logo {
+    font-size: 3rem;
+    color: var(--bg-color);
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.navbar a {
+    font-size: 1.9rem;
+    color: var(--bg-color);
+    margin-left: 4rem;
+    font-weight: 700;
+    transition: 0.3s ease;
+} 
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--text-color);
+}
+
+#menu-icon {
+    font-size: 3.6rem;
+    color: var(--bg-color);
+    cursor: pointer;
+    display: none;
+}
+
+/* home section code*/
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-img img{
+    width: 25vw;
+    border-radius: 50%;
+    box-shadow: 0 0 25px var(--main-color);
+    cursor: pointer;
+    animation: floatImage 4s ease-in-out infinite;
+    transition: 0.4s ease;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+.home-img img:hover {
+    box-shadow: 0 0 25px var(--main-color),
+                0 0 35px var(--main-color),
+                0 0 45px var(--main-color);
+}
+
+@keyframes floatImage {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-2.4rem);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.home-content {
+    margin-left: 5rem;
+}
+.home-content h3 {
+    font-size: 3.7rem;
+    font-weight: 700;
+}
+.home-content h3:nth-of-type(2) {
+    margin-bottom: 2rem;
+}
+span {
+    color: var(--main-color);
+}
+.home-content h1 {
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+.social-media a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 42px;
+    height: 42px;
+    background: transparent;
+    border: 0.2rem solid var(--main-color);
+    border-radius: 50%;
+    font-size:2rem ;
+    color: var(--main-color);
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease;
+}
+
+.social-media a:hover {
+    transform: scale(1.2) translateY(-10px);
+    background-color: var(--main-color);
+    color: var(--bg-color);
+    box-shadow: 0 0 25px var(--main-color)
+}
+.btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    border-radius: 4rem;
+    box-shadow: none;
+    font-size: 1.6rem;
+    color: var(--bg-color);
+    letter-spacing: 0.1rem ;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    box-shadow: 0 0 1.6rem var(--main-color);
+}
+
+/* abaout section */
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    background: var(--snd-bg-color);
+}
+
+.about-img img {
+    width: 25vw;
+    border: 2px solid var(--main-color);
+    border-radius: 50%;
+    box-shadow: 0 0 25px var(--main-color);
+    cursor: pointer;
+    transition: 0.4s ease;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+.about-img img:hover {
+    box-shadow: 0 0 25px var(--main-color),
+                0 0 35px var(--main-color),
+                0 0 45px var(--main-color);
+}
+
+.heading {
+    font-size: 6rem;
+    text-align: left;
+}
+
+.about-content {
+    padding: 0 4rem;
+}
+
+.about-content h2 {
+    text-align: left;
+    line-height: 1.2;
+}
+
+.about-content h3 {
+    font-size: 3rem;
+}
+.about-content p {
+    font-size: 1.6rem;
+    margin: 2rem 0 3rem;
+}
+
+/* skill section code*/
+.myskill h2 {
+    margin-bottom: 5rem;
+    text-align: center;
+}
+.myskill-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.skill-container .skill-box {
+    flex: 1 1 30rem;
+    background: var(--snd-bg-color);
+    padding:3rem 2rem 4rem ;
+    border-radius: 2rem;
+    text-align: center;
+    border: 0.3rem solid var(--bg-color);
+    transition: 0.3s ease;
+}
+/* Anda bisa menambahkan efek hover ini juga */
+.skill-container .skill-box:hover {
+    border-color: var(--main-color);
+    transform: scale(1.02);
+}
+
+.skill-container .skill-box i {
+    font-size: 7rem;
+    color: var(--main-color);
+}
+
+.skill-container .skill-box h3 {
+    font-size: 2.6rem;
+}
+
+.skill-container .skill-box p {
+    font-size: 1.6rem;
+    margin: 1rem 0 3rem;
+}
+
+/*-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+    STYLING UNTUK BAGIAN SERTIFIKASI
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+
+/* Mengatur Section Utama */
+#certification {
+    background-color: var(--snd-bg-color); /* Menggunakan warna latar kedua dari CSS Anda */
+    padding: 10rem 9% 5rem; /* Menambahkan padding */
+}
+
+/* Mengatur Judul "Certification" */
+#certification h2 {
+    text-align: center; /* Membuat judul di tengah */
+    font-size: 5rem; /* Ukuran font judul */
+    font-weight: 700;
+    margin-bottom: 4rem; /* Jarak dari judul ke kartu di bawahnya */
+    color: var(--text-color);
+}
+
+#certification h2 span {
+    color: var(--main-color); /* Memberi warna utama pada bagian span (jika ada) */
+}
+
+
+/* Grid Container untuk Kartu Sertifikat */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem; /* Jarak antar kartu */
+}
+
+/* Media queries untuk responsivitas */
+@media (max-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Styling untuk Setiap Kartu (.card) */
+.card {
+    background-color: var(--bg-color); /* Warna latar kartu (putih) */
+    border-radius: 1.5rem; /* Membuat sudut kartu menjadi tumpul */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Memberi bayangan agar terlihat melayang */
+    padding: 2.5rem; /* Jarak konten dari tepi kartu */
+    display: flex; /* Menggunakan flexbox untuk mengatur konten di dalamnya */
+    flex-direction: column; /* Mengatur item agar tersusun dari atas ke bawah */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animasi halus saat disentuh mouse */
+}
+
+/* Efek saat mouse diarahkan ke kartu */
+.card:hover {
+    transform: translateY(-10px); /* Kartu akan sedikit terangkat */
+    box-shadow: 0 8px 25px rgba(4, 119, 191, 0.2); /* Bayangan menjadi lebih jelas dengan warna utama Anda */
+}
+
+/* Judul di dalam kartu (misal: "Dicoding Academy") */
+.card h3 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--main-color); /* Menggunakan warna utama */
+    margin-bottom: 1rem;
+}
+
+/* Paragraf deskripsi di dalam kartu */
+.card p {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    line-height: 1.6;
+    flex-grow: 1; /* Membuat paragraf mengisi ruang kosong agar tombol selalu di bawah */
+    margin-bottom: 2rem;
+}
+
+/* Mengatur Tombol "Lihat Sertifikat" */
+.card .btn {
+    display: inline-block;
+    width: fit-content; /* Lebar tombol menyesuaikan teks */
+    align-self: flex-start; /* Posisi tombol di awal (kiri) */
+    margin-top: auto; /* Mendorong tombol ke bagian bawah kartu */
+}
+
+/* Styling untuk Thumbnail Sertifikat */
+.certificate-thumbnail {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.certificate-thumbnail:hover {
+    transform: scale(1.05);
+}
+
+
+
+.fade-right {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+
+
+#certification {
+    opacity: 1;
+    transform: translateX(0);
+}
+/* Experience Card Custom Style */
+.experience-grid {
+    margin-bottom: 4rem;
+    margin-top: 4rem;
+}
+.exp-card {
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    box-shadow: 0 4px 24px rgba(4,119,191,0.10);
+    transition: transform 0.3s cubic-bezier(.4,2,.3,1), box-shadow 0.3s cubic-bezier(.4,2,.3,1), background 0.3s;
+    border: none;
+    background: #0477bf;
+}
+.exp-card .exp-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+    color: #fff;
+    text-align: left;
+}
+.exp-blue { background: linear-gradient(120deg, #0477bf 80%, #5ad1e6 100%); }
+.exp-green { background: linear-gradient(120deg, #1abc9c 80%, #b2f7ef 100%); }
+.exp-yellow { background: linear-gradient(120deg, #f7b731 80%, #fffbe7 100%); color: #333; }
+.exp-orange { background: linear-gradient(120deg, #fa8231 80%, #ffe5b4 100%); color: #333; }
+.exp-purple { background: linear-gradient(120deg, #8854d0 80%, #e4d7fa 100%); }
+.exp-card:hover {
+    transform: translateY(-10px) scale(1.04);
+    box-shadow: 0 12px 32px rgba(4, 119, 191, 0.25);
+    filter: brightness(1.08);
+}
+.exp-card h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: inherit;
+}
+.exp-card p {
+    font-size: 1.1rem;
+    color: inherit;
+    margin-bottom: 0;
+}
+
+/* style.css */
+
+/* --- Pengaturan Dasar Body --- */
+/* (Sebaiknya letakkan warna latar di body agar seluruh halaman konsisten) */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif; /* Anda bisa ganti dengan font favorit Anda */
+    background-color: #0d545d; /* Warna latar belakang gelap untuk seluruh halaman */
+}
+
+
+/* --- Gaya untuk Bagian Portofolio --- */
+.Portofolio {
+    padding: 80px 10%; 
+    text-align: center; 
+}
+
+/* Gaya untuk Judul "My Portofolio" */
+.Portofolio .heading {
+    font-size: 2.8rem;
+    margin-bottom: 3rem; /* Jarak di bawah judul */
+    color: #000000; /* Warna teks putih */
+}
+
+/* Gaya untuk kata "Portofolio" yang disorot */
+.Portofolio .heading span {
+    color: #0ef; /* Warna aksen cyan yang cerah */
+}
+
+
+
+
+
+.portfolio-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.portfolio-box {
+    position: relative;
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    display: flex;
+}
+
+.portfolio-box img {
+    width: 100%;
+    transition: .5s ease;
+}
+
+.portfolio-box:hover img {
+    transform: scale(1.1); /* Efek zoom pada gambar */
+}
+
+.portfolio-layer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), #0ef);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 2rem;
+    transform: translateY(100%); /* Sembunyikan layer di bawah */
+    transition: .5s ease;
+}
+
+.portfolio-box:hover .portfolio-layer {
+    transform: translateY(0); /* Tampilkan layer saat hover */
+}
+
+.portfolio-layer h4 {
+    font-size: 1.8rem;
+    color: #fff;
+}
+
+.portfolio-layer p {
+    font-size: 0.9rem;
+    margin: .3rem 0 1rem;
+    color: #fff;
+}
+
+.portfolio-layer a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    background: #fff;
+    border-radius: 50%;
+}
+
+.portfolio-layer a i {
+    font-size: 1.5rem;
+    color: #1f242d; /* Warna ikon */
+}
+
+.contact {
+    background-color: var(--bg-color);
+}
+.contact .heading {
+    text-align: center;
+}
+
+.contact h2 {
+    text-align: center; /* Sebaiknya judul di tengah */
+    margin-bottom: 3rem;
+    font-size: 4rem; /* Sesuaikan ukuran font jika perlu */
+    color: var(--main-color);
+}
+
+.contact form {
+    max-width: 70rem; /* Sedikit lebih kecil agar lebih rapi */
+    margin: 1rem auto;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contact form .input-box {
+    display: flex;
+    justify-content: space-between; /* Memberi jarak otomatis */
+    flex-wrap: wrap;
+}
+
+/* Style BERSAMA untuk input dan textarea */
+.contact form .input-box input,
+.contact form textarea {
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background: var(--bg-color);
+    border: 0.25rem solid var(--main-color);
+    border-radius: 0.8rem;
+    margin: 0.7rem 0;
+}
+
+/* Style KHUSUS untuk input agar lebarnya setengah */
+.contact form .input-box input {
+    width: 49%;
+}
+
+/* Style KHUSUS untuk textarea agar lebarnya penuh */
+.contact form textarea {
+    width: 100%;
+    resize: none; /* Menghilangkan handle untuk resize */
+}
+
+/* Style untuk tombol submit agar di tengah dan lebar */
+.contact form .btn {
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+/* footer */
+
+.footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 3rem 9% 2rem;
+    background-color: var(--snd-bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer .social-media {
+    text-align: center;
+    padding-bottom: 2.5rem; /* Menggunakan rem agar konsisten */
+}
+
+.footer .social-media a {
+    display: inline-flex;  /* Gunakan inline-flex untuk menengahkan ikon */
+    justify-content: center; /* Ikon di tengah horizontal */
+    align-items: center;   /* Ikon di tengah vertikal */
+    width: 42px;           /* Typo '42x' diperbaiki menjadi '42px' */
+    height: 42px;
+    font-size: 2rem;      /* Ukuran ikon */
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+    border-radius: 50%;
+    margin: 0 10px;
+    transition: 0.3s ease;
+}
+
+.footer .social-media a:hover {
+    transform: scale(1.2) translateY(-10px);
+    background-color: var(--main-color);
+    color: var(--bg-color);
+    box-shadow: 0 0 25px var(--main-color);
+}
+
+.footer .copyright {
+    margin-top: 1.5rem; /* Menggunakan margin-top, bukan margin */
+    text-align: center;
+    color: var(--text-color);
+    font-size: 1.4rem;  /* Sedikit lebih kecil agar proporsional */
+}
